@@ -14,15 +14,11 @@ app.use(express.json());
 // application URL from where you are calling these APIs
 app.use(cors({origin: 'http://localhost:8100'}));
 
-/* this '/items' URL will have two end-points:
-→ localhost:3000/items/ (this returns array of objects)
-→ localhost:3000/items/:id (this returns single object)
-*/
 app.use('/items', itemsRouter);
 
 // default URL to API
 app.use('/', function(req, res) {
-    res.send('node-ex-api works :-)');
+    res.send('api works :-)');
 });
 
 const server = http.createServer(app);
